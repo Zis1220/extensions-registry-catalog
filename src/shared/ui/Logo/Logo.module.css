@@ -1,0 +1,9 @@
+.logo {
+  text-decoration: none;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white)) !important;
+  transition: opacity 0.2 ease-in-out;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}

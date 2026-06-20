@@ -1,0 +1,22 @@
+services:
+  catalog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CATALOG_URL: ${CATALOG_URL}
+        REGISTRY_API_URL: ${REGISTRY_API_URL}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      CATALOG_URL: ${CATALOG_URL}
+      REGISTRY_API_URL: ${REGISTRY_API_URL}
+      REDIS_CACHE_ENABLED: ${REDIS_CACHE_ENABLED}
+      REDIS_URL: ${REDIS_URL}
+      REDIS_CACHE_KEY_PREFIX: ${REDIS_CACHE_KEY_PREFIX}
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - catalog-network

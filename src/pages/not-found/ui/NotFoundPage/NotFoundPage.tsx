@@ -1,0 +1,28 @@
+import { Container, Group, Text, Title } from '@mantine/core';
+
+import { ButtonLink } from '@/shared/ui';
+
+import { Illustration } from './Illustration';
+import classes from './NotFoundPage.module.css';
+
+export function NotFoundPage() {
+  return (
+    <Container className={classes.root ?? ''}>
+      <div className={classes.inner ?? ''}>
+        <Illustration className={classes.image ?? ''} />
+        <div className={classes.content ?? ''}>
+          <Title className={classes.title ?? ''}>Nothing to see here</Title>
+          <Text c="dimmed" size="lg" ta="center" className={classes.description ?? ''}>
+            Page you are trying to open does not exist. You may have mistyped the address, or the
+            page has been moved to another URL.
+          </Text>
+          <Group justify="center">
+            <ButtonLink href={'/'} size="md">
+              Take me back to home page
+            </ButtonLink>
+          </Group>
+        </div>
+      </div>
+    </Container>
+  );
+}
