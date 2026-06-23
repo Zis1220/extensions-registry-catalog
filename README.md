@@ -12,6 +12,8 @@
 
 **Live Demo:** [https://extensions.ivanzubkov.ru](https://extensions.ivanzubkov.ru)
 
+<img src="./public/pagespeed.png" alt="Extensions Registry Catalog pagespeed test" width="100%" />
+
 ## Содержание
 
 - [Возможности](#возможности)
